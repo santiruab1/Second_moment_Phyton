@@ -13,14 +13,14 @@ El proyecto incluye funciones para manejar valores nulos, estandarizar texto, el
 
 1. **Clona el repositorio:**
    ```bash
-   git clone <URL-del-repositorio>
+   git clone <https://github.com/santiruab1/Second_moment_Phyton.git>
    cd Second_moment_Phyton
    ```
 
 2. **Crea y activa un entorno virtual:**
    ```bash
    python -m venv .env
-   .env\Scripts\activate
+   .env\Scripts\activate.ps1
    ```
 
 3. **Instala las dependencias:**
