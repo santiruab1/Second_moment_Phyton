@@ -92,3 +92,8 @@ df_ventas_clientes = pd.merge(df_ventas, df_clientes, on='ID_Cliente', how='inne
 print("\nVentas combinadas con información de clientes:")
 print(df_ventas_clientes.head(20))
 
+# Agrupar ventas por ciudad y sumar la cantidad total
+ventas_por_ciudad = df_ventas_clientes.groupby('Ciudad')['Cantidad'].sum()
+
+print("\nCantidad total de productos vendidos por ciudad:")
+print(ventas_por_ciudad)
