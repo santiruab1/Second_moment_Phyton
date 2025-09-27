@@ -126,7 +126,7 @@ ID_Venta,ID_Cliente,Producto,Cantidad
 125,25,Audífonos$,3
 126,26,Monitor,1
 127,27,Mouse,2
-128,28,Teclado,1
+128,28,,1
 129,29,Impresora,1
 130,30,Smartwatch#,1
 131,31,Televisor,2
