@@ -85,3 +85,10 @@ print(clientes_bogota.head(20))
 ventas_televisor = df_ventas[df_ventas['Producto'] == 'televisor']
 print("\nVentas de Televisor:")
 print(ventas_televisor.head(20))
+
+# Combinar ventas y clientes usando ID_Cliente
+df_ventas_clientes = pd.merge(df_ventas, df_clientes, on='ID_Cliente', how='inner')
+
+print("\nVentas combinadas con información de clientes:")
+print(df_ventas_clientes.head(20))
+
