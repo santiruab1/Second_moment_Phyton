@@ -52,14 +52,14 @@ df_ventas = estandarizar_texto(df_ventas, ['Producto'])
 
 # Inspección rápida para validar estandarización
 print("Primeros datos de ventas tras estandarizar texto:")
-print(df_ventas.head())
+print(df_ventas.head(20))
 
 # Aplicar la función al DataFrame de clientes
 df_clientes = estandarizar_texto(df_clientes, ['Nombre', 'Ciudad'])
 
 # Inspección rápida para validar estandarización en clientes
 print("Primeros datos de clientes tras estandarizar texto:")
-print(df_clientes.head())
+print(df_clientes.head(20))
 
 def eliminar_simbolos(df, columnas, simbolos='$#€¥'):
     for col in columnas:
@@ -70,3 +70,18 @@ def eliminar_simbolos(df, columnas, simbolos='$#€¥'):
 # Aplicar la función a los DataFrames
 df_clientes = eliminar_simbolos(df_clientes, ['Nombre', 'Ciudad'])
 df_ventas = eliminar_simbolos(df_ventas, ['Producto'])
+
+# Filtrar ventas donde la cantidad sea mayor a 1
+ventas_mayor_1 = df_ventas[df_ventas['Cantidad'].astype(int) > 1]
+print("\nVentas con cantidad mayor a 1:")
+print(ventas_mayor_1.head(20))
+
+# Filtrar clientes de una ciudad específica, por ejemplo 'bogotá'
+clientes_bogota = df_clientes[df_clientes['Ciudad'] == 'bogotá']
+print("\nClientes de Bogotá:")
+print(clientes_bogota.head(20))
+
+# Filtrar ventas de un producto específico, por ejemplo 'televisor'
+ventas_televisor = df_ventas[df_ventas['Producto'] == 'televisor']
+print("\nVentas de Televisor:")
+print(ventas_televisor.head(20))
