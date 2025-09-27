@@ -38,3 +38,20 @@ df_ventas = manejar_nulos(df_ventas, ['Producto', 'Cantidad'])
 print("Valores nulos en ventas después de limpiar:")
 print(df_ventas.isnull().sum())
 
+# Función para estandarizar texto
+def estandarizar_texto(df, columnas):
+    """
+    Convierte a minúsculas y elimina espacios extra en las columnas indicadas.
+    """
+    for col in columnas:
+        df[col] = df[col].astype(str).str.lower().str.strip()
+    return df
+
+# Aplicar la función al DataFrame de ventas
+df_ventas = estandarizar_texto(df_ventas, ['Producto'])
+
+# Inspección rápida para validar estandarización
+print("Primeros datos de ventas tras estandarizar texto:")
+print(df_ventas.head())
+
+
