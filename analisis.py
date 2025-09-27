@@ -97,3 +97,8 @@ ventas_por_ciudad = df_ventas_clientes.groupby('Ciudad')['Cantidad'].sum()
 
 print("\nCantidad total de productos vendidos por ciudad:")
 print(ventas_por_ciudad)
+
+# Análisis de frecuencia: ¿Cuál es el producto con más ventas?
+producto_mas_vendido = df_ventas['Producto'].value_counts().idxmax()
+cantidad_ventas_producto = df_ventas['Producto'].value_counts().max()
+print(f"\nProducto más vendido: {producto_mas_vendido} ({cantidad_ventas_producto} ventas)")
